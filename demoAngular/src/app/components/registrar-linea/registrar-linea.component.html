@@ -1,0 +1,63 @@
+
+<div class="card">
+    <h5 class="card-header">Registro De Linea Telefonica</h5>
+    <div class="card-body">
+        <form action="">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="nombre">Nombre:</label>
+                <input [(ngModel)]="persona.pernombre" type="text" name="pernombre"  class="form-control" id="nombre" placeholder="Nombre" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="apellido">Apellido</label>
+                <input [(ngModel)]="persona.perapellido" name="perapellido"  type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="telefono">Telefono Fijo:</label>
+                  <input [(ngModel)]="persona.pertelefonofijo" name="pertelefonofijo" type="text" class="form-control" id="telefono" placeholder="Telefono" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cedula">Cedula</label>
+                  <input [(ngModel)]="persona.percedula" name="percedula" type="text" class="form-control" id="cedula" placeholder="Cedula" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="fechanac">Fecha De Nacimiento:</label>
+                  <input type="date" 
+                  class="form-control" [(ngModel)]="persona.perfechanacimiento"
+                  name="perfechanacimiento">
+                </div>
+              </div>
+              <br>
+              
+           
+         
+            <button  (click)="Guardar();" type="submit" class="btn btn-primary">Registrar Linea</button>
+          </form>
+
+          <table>
+          <thead>
+            <th>Id</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>telefono</th>
+            <th>cedula</th>
+            <th>fecha</th>
+          </thead>
+          <tr *ngFor="let datos of personas">
+              <td>{{datos.perid}}</td>
+            <td>{{datos.pernombre}}</td>
+            <td>{{datos.perapellido}}</td>
+            <td>{{datos.pertelefonofijo}}</td>
+            <td>{{datos.percedula}}</td>
+            <td>{{datos.perfechanacimiento}}</td>
+          </tr>
+          </table>
+
+
+    </div>
+  </div>
